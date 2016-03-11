@@ -10,8 +10,10 @@ Dotenv.load
 # require 'toggl_client/user.rb'
 # require 'toggl_client/reports.rb'
 # require 'toggl_client/billable_items.rb'
+require_relative 'core_ext/fixnum.rb'
 
 require_relative 'toggl_client/client.rb'
 require_relative 'toggl_client/user.rb'
-require_relative 'toggl_client/reports.rb'
+require_relative 'toggl_client/reports/summary.rb'
+require_relative 'toggl_client/formatter/summary.rb'
 require_relative 'toggl_client/billable_items.rb'
