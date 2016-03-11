@@ -20,7 +20,7 @@ describe TogglClient::User do
     subject { TogglClient::User.new.default_workspace_id }
 
     it 'should return integer' do
-      subject.should be_instance_of(Fixnum)
+      expect(subject).to be_instance_of(Fixnum)
     end
 
     it 'should return positive id' do
