@@ -17,6 +17,10 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency 'faraday', '~>0.8'
   gem.add_dependency 'json', '~>1.6'
+  gem.add_dependency 'dotenv', '~>2.0'
 
   gem.add_development_dependency 'vcr', '~>2.5'
+  gem.add_development_dependency 'webmock', '~>1.5'
+  gem.add_development_dependency 'rspec', '~>2.5'
+  gem.add_development_dependency 'pry'
 end
