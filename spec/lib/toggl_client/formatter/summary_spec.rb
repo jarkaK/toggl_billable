@@ -48,6 +48,13 @@ describe TogglClient::Formatter::Summary do
           ]
       }
     end
+    let(:expected_item) do
+      {
+        task: "#{projects[0]}: #{tasks[0]}",
+        amount: 7.5,
+        unit: :hours
+      }
+    end
 
     it 'should contain data in correct format' do
       subject.each do |client, data|
@@ -87,6 +94,10 @@ describe TogglClient::Formatter::Summary do
       expect(data[2][:task]).to   eq("#{projects[1]}: #{tasks[0]}")
       expect(data[2][:amount]).to eq(2.25)
       expect(data[2][:unit]).to   eq(:hours)
+    end
+
+    it 'should return items in correct format' do
+      expect(subject[clients[0]][0]).to eq(expected_item)
     end
 
   end

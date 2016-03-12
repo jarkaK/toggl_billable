@@ -23,4 +23,5 @@ Gem::Specification.new do |gem|
   gem.add_development_dependency 'webmock', '~>1.5'
   gem.add_development_dependency 'rspec', '~>2.5'
   gem.add_development_dependency 'pry'
+  gem.add_development_dependency 'timecop', ['~> 0.6']
 end

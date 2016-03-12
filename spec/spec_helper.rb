@@ -1,5 +1,6 @@
 require 'rspec'
 require 'vcr'
+require 'timecop'
 
 require_relative '../lib/toggl_client.rb'
 

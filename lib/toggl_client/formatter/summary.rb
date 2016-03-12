@@ -9,6 +9,8 @@ module TogglClient
         @billable = {}
       end
 
+      # TODO: make this working also for different grouping than default
+      # TODO: implement custom formatting
       def billable_items
         data.each do |project_data|
           process_project(project_data)

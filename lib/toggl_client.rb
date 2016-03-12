@@ -14,6 +14,7 @@ require_relative 'core_ext/fixnum.rb'
 
 require_relative 'toggl_client/client.rb'
 require_relative 'toggl_client/user.rb'
+require_relative 'toggl_client/reports/base.rb'
 require_relative 'toggl_client/reports/summary.rb'
 require_relative 'toggl_client/formatter/summary.rb'
 require_relative 'toggl_client/billable_items.rb'
