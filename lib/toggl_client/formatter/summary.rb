@@ -7,8 +7,12 @@ module TogglClient
       # TODO: implement custom formatting
       # TODO: projects without names
       def billable_items
-        data.each do |project_data|
-          process_project(project_data)
+        data.group_by { |d| d['title']['client'] }.each do |group_name, group_data|
+          key = group_name || NO_GROUP_KEY
+          billable[key] = []
+          group_data.group_by { |d| d['title']['project'] }.each do |subgroup_name, subgroup_data|
+            process_project(subgroup_data.first)
+          end
         end
 
         billable
@@ -19,7 +23,6 @@ module TogglClient
       def process_project(project_data)
         project = project_data['title']['project']
         client  = project_data['title']['client'] || NO_GROUP_KEY
-        billable[client] = [] unless billable[client]
 
         project_data['items'].each do |item|
           billable[client] << {
