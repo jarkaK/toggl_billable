@@ -7,7 +7,7 @@ module TogglClient
         params[:grouping]    = options[:grouping] if options[:grouping]
         params[:subgrouping] = options[:subgrouping] if options[:grouping]
 
-        request = "summary?#{hash_to_params(params)}"
+        request = "summary?#{hash_to_params}"
         @report = JSON.parse(Client.report_get(request).body)
       end
     end

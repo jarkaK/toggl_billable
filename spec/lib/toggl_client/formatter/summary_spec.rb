@@ -69,14 +69,14 @@ describe TogglClient::Formatter::Summary do
     end
 
     it 'should return data with clients as keys' do
-      expect(subject.keys).to match_array(clients + ['NO_CLIENT'])
+      expect(subject.keys).to match_array(clients + ['NO_GROUP'])
     end
 
     it 'should return correct amount of items for each client' do
       result = subject
       expect(result[clients[0]].size).to  eq(3)
       expect(result[clients[1]].size).to  eq(1)
-      expect(result['NO_CLIENT'].size).to eq(1)
+      expect(result['NO_GROUP'].size).to eq(1)
     end
 
     it 'should format data correctly' do

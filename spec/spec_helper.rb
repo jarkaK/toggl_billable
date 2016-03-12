@@ -20,6 +20,8 @@ RSpec.configure do |config|
 
   config.around(:each) do |example|
     options = example.metadata[:vcr] || {}
+    options[:record] = :new_episodes
+
     if options[:record] == :skip
       VCR.turned_off(&example)
     else

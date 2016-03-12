@@ -10,24 +10,24 @@ module TogglClient
         }
       end
 
-      def billable_items
-        klass = Object.const_get("TogglClient::Formatter::#{self.class.to_s.gsub(/^.*::/, '')}")
-        klass.new(report).billable_items
-      end
-
       def last_month_billable
         start = DateTime.now.prev_month
 
         start_date = start.strftime('%Y-%m-01')
         end_date   = DateTime.civil(start.year, start.month, -1).strftime(('%Y-%m-%d'))
 
-        @report ||= get_report(start_date, end_date)
+        @report ||= get_report(start_date: start_date, end_date: end_date)
         billable_items
       end
 
       private
 
-      def hash_to_params(params)
+      def billable_items
+        klass = Object.const_get("TogglClient::Formatter::#{self.class.to_s.gsub(/^.*::/, '')}")
+        klass.new(report).billable_items
+      end
+
+      def hash_to_params
         return '' unless params
 
         params.map{ |k, v| "#{k}=#{v}" }.join('&')

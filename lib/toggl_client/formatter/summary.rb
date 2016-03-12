@@ -1,16 +1,11 @@
 module TogglClient
   module Formatter
-    class Summary
-      attr_reader :data, :billable
-      NO_CLIENT_KEY = 'NO_CLIENT'
-
-      def initialize(report)
-        @data     = report['data']
-        @billable = {}
-      end
+    class Summary < Base
 
       # TODO: make this working also for different grouping than default
+      # TODO: rounding parameter
       # TODO: implement custom formatting
+      # TODO: projects without names
       def billable_items
         data.each do |project_data|
           process_project(project_data)
@@ -23,13 +18,13 @@ module TogglClient
 
       def process_project(project_data)
         project = project_data['title']['project']
-        client  = project_data['title']['client'] || NO_CLIENT_KEY
+        client  = project_data['title']['client'] || NO_GROUP_KEY
         billable[client] = [] unless billable[client]
 
         project_data['items'].each do |item|
           billable[client] << {
             task: "#{project}: #{item['title']['time_entry']}",
-            amount: item['time'].to_hour,
+            amount: item['time'].to_hours,
             unit: :hours
           }
         end

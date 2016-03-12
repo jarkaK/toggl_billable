@@ -13,7 +13,7 @@ module TogglClient
     end
 
     def self.reports_base
-      'https://toggl.com/reports/api/v2/'
+      'https://toggl.com/reports/api/v2'
     end
 
     def self.connection

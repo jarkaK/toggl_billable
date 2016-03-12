@@ -104,4 +104,70 @@ http_interactions:
         job"},"time":21600000,"cur":null,"sum":null,"rate":null}]}]}'
     http_version: 
   recorded_at: Fri, 11 Mar 2016 19:03:38 GMT
+- request:
+    method: get
+    uri: https://2dacc2a49d88af72a08887a9cc47e777:api_token@toggl.com/reports/api/v2/summary?since=2016-01-01&until=2016-02-01&user_agent=toggl_client&workspace_id=1364197
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx
+      Date:
+      - Sat, 12 Mar 2016 17:24:34 GMT
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '2064'
+      Connection:
+      - keep-alive
+      Keep-Alive:
+      - timeout=20
+      Expires:
+      - Sat, 12 Mar 2016 17:24:33 GMT
+      Cache-Control:
+      - no-cache
+      Access-Control-Allow-Methods:
+      - GET, OPTIONS
+      Access-Control-Allow-Headers:
+      - Content-Type, Depth, User-Agent, X-File-Size, X-Requested-With, If-Modified-Since,
+        X-File-Name, Cache-Control, Authorization, Accept, Accept-Encoding, Accept-Language,
+        Access-Control-Request-Headers, Access-Control-Request-Method, Connection,
+        Host, Origin, User-Agent
+      Access-Control-Allow-Credentials:
+      - 'true'
+      Instance:
+      - reports3.toggl.com
+      - web-balancer4.toggl.com
+    body:
+      encoding: UTF-8
+      string: '{"total_grand":366060000,"total_billable":null,"total_currencies":[{"currency":null,"amount":null}],"data":[{"id":14315474,"title":{"project":"General
+        (cl 1)","client":"Client 1","color":"10","hex_color":"#67412c"},"time":63000000,"total_currencies":[{"currency":null,"amount":null}],"items":[{"title":{"time_entry":"Meetings"},"time":52200000,"cur":null,"sum":null,"rate":null},{"title":{"time_entry":"Task
+        A"},"time":10800000,"cur":null,"sum":null,"rate":null}]},{"id":14315467,"title":{"project":"Project
+        1 (cl 1)","client":"Client 1","color":"7","hex_color":"#268bb5"},"time":203760000,"total_currencies":[{"currency":null,"amount":null}],"items":[{"title":{"time_entry":"Task
+        A"},"time":185280000,"cur":null,"sum":null,"rate":null},{"title":{"time_entry":"Task
+        B"},"time":18480000,"cur":null,"sum":null,"rate":null}]},{"id":14315468,"title":{"project":"Project
+        2 (Cl 1)","client":"Client 1","color":"0","hex_color":"#4dc3ff"},"time":61500000,"total_currencies":[{"currency":null,"amount":null}],"items":[{"title":{"time_entry":"Some
+        other task"},"time":3600000,"cur":null,"sum":null,"rate":null},{"title":{"time_entry":"Task
+        A"},"time":8100000,"cur":null,"sum":null,"rate":null},{"title":{"time_entry":"Task
+        C"},"time":12600000,"cur":null,"sum":null,"rate":null},{"title":{"time_entry":"Task
+        X"},"time":37200000,"cur":null,"sum":null,"rate":null}]},{"id":14315476,"title":{"project":"Project
+        5 (without cl)","client":null,"color":"1","hex_color":"#bc85e6"},"time":21600000,"total_currencies":[{"currency":null,"amount":null}],"items":[{"title":{"time_entry":"Side
+        job"},"time":21600000,"cur":null,"sum":null,"rate":null}]},{"id":null,"title":{"project":null,"client":null,"color":"0","hex_color":null},"time":16200000,"total_currencies":[{"currency":null,"amount":null}],"items":[{"title":{"time_entry":"HAHA
+        TASK"},"time":3600000,"cur":null,"sum":null,"rate":null},{"title":{"time_entry":"No
+        project task"},"time":10800000,"cur":null,"sum":null,"rate":null},{"title":{"time_entry":"Task
+        without project"},"time":1800000,"cur":null,"sum":null,"rate":null}]}]}'
+    http_version: 
+  recorded_at: Fri, 24 Apr 2015 22:00:00 GMT
 recorded_with: VCR 2.9.3
