@@ -28,6 +28,18 @@ For running tests
      require 'toggl_client'
      TogglClient::Client.start(TOGGL_API_TOKEN)
      
+### Item Format
+
+Item is returned in following format. Format customisation is planned as a new feauture.
+
+      {
+        task: task,
+        amount: 7.5,
+        unit: hours
+      }
+     
+### Get items 
+     
 ## Contribution
 Contribution is highly welcomed. Fork the repo, create a feature branch, create a pull request. 
 
