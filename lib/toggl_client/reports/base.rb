@@ -1,13 +1,14 @@
 module TogglClient
   module Reports
     class Base
-      attr_accessor :params, :report
+      attr_accessor :params, :report, :options
 
       def initialize(options = {})
         @params = {
           workspace_id: options[:workspace_id] || User.new.default_workspace_id,
           user_agent: options[:user_agent] || 'toggl_client'
         }
+        @options = options
       end
 
       def last_month_billable
@@ -23,8 +24,11 @@ module TogglClient
       private
 
       def billable_items
+        params = {}
+        params[:default_client] = options[:default_client] if options[:default_client]
+
         klass = Object.const_get("TogglClient::Formatter::#{self.class.to_s.gsub(/^.*::/, '')}")
-        klass.new(report).billable_items
+        klass.new(report, options).billable_items
       end
 
       def hash_to_params

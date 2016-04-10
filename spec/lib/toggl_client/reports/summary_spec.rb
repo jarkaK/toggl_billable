@@ -32,7 +32,7 @@ describe TogglClient::Reports::Summary do
     before do
       Timecop.freeze('2015-04-25')
       obj.should_receive(:get_report).with(dates).and_return(report)
-      TogglClient::Formatter::Summary.should_receive(:new).with(report).and_return(formatter)
+      TogglClient::Formatter::Summary.should_receive(:new).with(report, {}).and_return(formatter)
       formatter.should_receive(:billable_items).and_return(double)
     end
 

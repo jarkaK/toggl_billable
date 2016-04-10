@@ -1,7 +1,8 @@
 module TogglClient
   module Formatter
     class Details < Base
-      SKIP_GROUP_DATES = [nil]
+      SKIP_GROUP_DATES = []
+      SHORT_DATES = [nil]
 
       # TODO: make this working also for different grouping than default
       # TODO: implement custom formatting
@@ -9,14 +10,14 @@ module TogglClient
         group = data.group_by { |d| d['client'] }
 
         group.each do |group_name, group_items|
-          key = group_name || NO_GROUP_KEY
-          billable[key] = []
+          key = group_name || @no_client_key
+          billable[key] = [] unless billable[key]
           subgroup = group_items.group_by { |d| d['project'] }
 
           subgroup.each do |subgroup_name, subgroup_items|
             subgroup_items.group_by { |d| d['description'] }.each do |item, data|
               if with_dates && !SKIP_GROUP_DATES.include?(subgroup_name)
-                task = "#{dates(data)}: "
+                task = "#{dates(data, SHORT_DATES.include?(subgroup_name))}: "
               else
                 task = ''
               end
@@ -43,9 +44,11 @@ module TogglClient
 
       private
 
-      def dates(items)
+      def dates(items, short)
         start_date = Date.parse(items.sort_by { |i| i['start'] }.first['start'])
         end_date   = Date.parse(items.sort_by { |i| i['end'] }.reverse.first['end'])
+
+        return start_date.strftime('%b').to_s if short
 
         if start_date.strftime('%-d') == end_date.strftime('%-d')
           start_date.strftime('%b %-d')

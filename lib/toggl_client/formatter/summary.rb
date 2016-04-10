@@ -8,8 +8,8 @@ module TogglClient
       # TODO: projects without names
       def billable_items
         data.group_by { |d| d['title']['client'] }.each do |group_name, group_data|
-          key = group_name || NO_GROUP_KEY
-          billable[key] = []
+          key = group_name || @no_client_key
+          billable[key] = [] unless billable[key]
           group_data.group_by { |d| d['title']['project'] }.each do |subgroup_name, subgroup_data|
             process_project(subgroup_data.first)
           end
@@ -22,7 +22,7 @@ module TogglClient
 
       def process_project(project_data)
         project = project_data['title']['project']
-        client  = project_data['title']['client'] || NO_GROUP_KEY
+        client  = project_data['title']['client'] || @no_client_key
 
         project_data['items'].each do |item|
           billable[client] << {

@@ -111,7 +111,7 @@ describe TogglClient::Formatter::Details do
         amount: 2.25,
         unit: :hours
       },{
-        task: "#{tasks[1]}",
+        task: "Jan: #{tasks[1]}",
         amount: 2.0,
         unit: :hours
       },{
@@ -135,14 +135,14 @@ describe TogglClient::Formatter::Details do
   end
 
   it 'should return data with clients as keys' do
-    expect(subject.keys).to match_array(clients + ['NO_GROUP'])
+    expect(subject.keys).to match_array(clients + ['NO_CLIENT'])
   end
 
   it 'should return correct amount of items for each client' do
     result = subject
     expect(result[clients[0]].size).to  eq(3)
     expect(result[clients[1]].size).to  eq(1)
-    expect(result['NO_GROUP'].size).to eq(1)
+    expect(result['NO_CLIENT'].size).to eq(1)
   end
 
   it 'should return items in correct format' do
