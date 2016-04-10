@@ -2,7 +2,7 @@ require 'rspec'
 require 'vcr'
 require 'timecop'
 
-require_relative '../lib/toggl_client.rb'
+require_relative '../lib/toggl_billable.rb'
 
 TEST_API_TOKEN = '2dacc2a49d88af72a08887a9cc47e777'
 
@@ -15,7 +15,7 @@ RSpec.configure do |config|
   config.color = true
 
   config.before(:all) do
-    TogglClient::Client.start(TEST_API_TOKEN)
+    TogglBillable::Client.start(TEST_API_TOKEN)
   end
 
   config.around(:each) do |example|

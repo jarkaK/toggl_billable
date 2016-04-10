@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   module Formatter
     class Summary < Base
 

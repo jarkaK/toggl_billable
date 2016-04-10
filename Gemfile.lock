@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    toggl_client (0.1.1)
+    toggl_billable (0.1.1)
       faraday (~> 0.8)
       json (~> 1.6)
 
@@ -47,7 +47,7 @@ DEPENDENCIES
   pry
   rspec (~> 2.5)
   timecop (~> 0.6)
-  toggl_client!
+  toggl_billable!
   vcr (~> 2.5)
   webmock (~> 1.5)
 

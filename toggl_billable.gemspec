@@ -1,21 +1,19 @@
 # encoding: utf-8
 
 Gem::Specification.new do |gem|
-  gem.name          = 'toggl_client'
+  gem.name          = 'toggl_billable'
   gem.version       = '0.1.1'
   gem.date          = '2016-03-12'
   gem.summary       = "Basic operations with toggl API"
   gem.description   = "A simple gem that enables to communicate with toggl API. Main Purpose is to receive items for invoicing."
 
   gem.authors       = ["Jaroslava Kadlecova"]
-  gem.homepage      = "http://github.com/jarkadlec/toggl_client"
+  gem.homepage      = "http://github.com/jarkadlec/toggl_billable"
   gem.email         = 'kadlecovaj@gmail.com'
   gem.license       = 'MIT'
 
   gem.require_paths = ["lib"]
   gem.files         = Dir['lib/**/*.rb']
-  # gem.bindir        = "bin"
-  # gem.executables  << "toggl_client"
 
   gem.required_ruby_version = '>= 2.0'
 

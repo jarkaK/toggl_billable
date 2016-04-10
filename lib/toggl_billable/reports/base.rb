@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   module Reports
     class Base
       attr_accessor :params, :report, :options
@@ -27,7 +27,7 @@ module TogglClient
         params = {}
         params[:default_client] = options[:default_client] if options[:default_client]
 
-        klass = Object.const_get("TogglClient::Formatter::#{self.class.to_s.gsub(/^.*::/, '')}")
+        klass = Object.const_get("TogglBillable::Formatter::#{self.class.to_s.gsub(/^.*::/, '')}")
         klass.new(report, options).billable_items
       end
 

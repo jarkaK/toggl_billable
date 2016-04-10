@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   class Client
     def self.start(api_token)
       @connection = Faraday.new(url: 'https://www.toggle.com') do |faraday|

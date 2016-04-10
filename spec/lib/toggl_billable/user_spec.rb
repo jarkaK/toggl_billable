@@ -1,9 +1,9 @@
 require 'spec_helper'
 
-describe TogglClient::User do
+describe TogglBillable::User do
 
   context '#workspaces' do
-    subject { TogglClient::User.new.workspaces }
+    subject { TogglBillable::User.new.workspaces }
 
     it 'should return workspaces' do
       expect(subject.count).to be >= 0
@@ -17,7 +17,7 @@ describe TogglClient::User do
   end
 
   context '#default_workspace_id' do
-    subject { TogglClient::User.new.default_workspace_id }
+    subject { TogglBillable::User.new.default_workspace_id }
 
     it 'should return integer' do
       expect(subject).to be_instance_of(Fixnum)

@@ -8,7 +8,7 @@
 
 require 'spec_helper'
 
-describe TogglClient::Formatter::Summary do
+describe TogglBillable::Formatter::Summary do
   context '#billable_items' do
     subject { described_class.new(report).billable_items }
     let(:projects) { ['project 1', 'project 2', 'project 3'] }

@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   class Config
     @format_daterange_start = '%b %-d'
     @format_daterange_end = '%-d'

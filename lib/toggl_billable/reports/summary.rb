@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   module Reports
     class Summary < Base
       def get_report(options)

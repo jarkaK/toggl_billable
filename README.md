@@ -1,4 +1,4 @@
-Toggl-client
+Toggl-billable
 ==============
 
 Toggl client with main purpose to prepare data for invoicing. It is developed and tested only for the free version of 
@@ -10,6 +10,10 @@ Toggl (for now). The functionality is very limited and might be extended in futu
 
  - ruby 2.0 or higher
  - bundle (You can install using `gem install bundle`) 
+
+Add gem to Gemfile
+
+    gem 'toggl_billable'
 
 
 Simply Run 
@@ -23,8 +27,8 @@ For running tests
  
 ## Usage
  
-     require 'toggl_client'
-     TogglClient::Client.start(TOGGL_API_TOKEN)
+     require 'toggl_billable'
+     TogglBillable::Client.start(TOGGL_API_TOKEN)
      
 ### Item Format
 
@@ -42,8 +46,8 @@ Better documentation will be added. To get items for last month run sth like tha
 
     require 'toggl_client'
     
-    TogglClient::Client.start(TOGGL_API__TOKEN)
-    TogglClient::Reports::Details.new.last_month_billable
+    TogglBillable::Client.start(TOGGL_API__TOKEN)
+    TogglBillable::Reports::Details.new.last_month_billable
     
 ## Contribution
 Contribution is highly welcomed. Fork the repo, create a feature branch, create a pull request. 

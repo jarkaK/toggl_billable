@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   module Formatter
     class Details < Base
       SKIP_GROUP_DATES = []
@@ -47,13 +47,13 @@ module TogglClient
         start_date = Date.parse(items.sort_by { |i| i['start'] }.first['start'])
         end_date   = Date.parse(items.sort_by { |i| i['end'] }.reverse.first['end'])
 
-        return start_date.strftime(TogglClient::Config.format_month).to_s if short
+        return start_date.strftime(TogglBillable::Config.format_month).to_s if short
 
         if start_date.strftime('%-d') == end_date.strftime('%-d')
-          start_date.strftime(TogglClient::Config.format_day)
+          start_date.strftime(TogglBillable::Config.format_day)
         else
-          start_date = start_date.strftime(TogglClient::Config.format_daterange_start)
-          end_date = end_date.strftime(TogglClient::Config.format_daterange_end)
+          start_date = start_date.strftime(TogglBillable::Config.format_daterange_start)
+          end_date = end_date.strftime(TogglBillable::Config.format_daterange_end)
 
           "#{start_date}-#{end_date}"
         end

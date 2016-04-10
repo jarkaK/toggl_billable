@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   module Formatter
     class Base
       attr_accessor :data, :billable

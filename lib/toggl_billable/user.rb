@@ -1,4 +1,4 @@
-module TogglClient
+module TogglBillable
   class User
 
     def workspaces

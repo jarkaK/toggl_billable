@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe TogglClient::Formatter::Details do
+describe TogglBillable::Formatter::Details do
   subject { described_class.new(report).billable_items }
 
   let(:tasks)   { ['Task X', 'Meetings', 'Task C'] }
@@ -151,7 +151,7 @@ describe TogglClient::Formatter::Details do
 
   context 'configure date formats differently' do
     before do
-      TogglClient::Config.format_day = '%d-%m-%Y'
+      TogglBillable::Config.format_day = '%d-%m-%Y'
       expected_items_client1.last[:task] = "16-01-2016: #{projects[1]}: #{tasks[0]}"
     end
 
