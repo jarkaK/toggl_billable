@@ -49,9 +49,6 @@ Better documentation will be added. To get items for last month run sth like tha
     TogglBillable::Client.start(TOGGL_API__TOKEN)
     TogglBillable::Reports::Details.new.last_month_billable
     
-## Contribution
-Contribution is highly welcomed. Fork the repo, create a feature branch, create a pull request. 
-
 ### TODO
 
  - Toggle Pro features integration
