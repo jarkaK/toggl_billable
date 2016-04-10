@@ -2,15 +2,13 @@ Toggl-client
 ==============
 
 Toggl client with main purpose to prepare data for invoicing. It is developed and tested only for the free version of 
-Toggl (for now).
-
-This gem is integrated into [iucto_invoicing](https://github.com/jarkadlec/iucto_invoices) 
+Toggl (for now). The functionality is very limited and might be extended in future 
  
 ## Install
 
 ### Prerequisities
 
- - ruby v 2.*
+ - ruby 2.0 or higher
  - bundle (You can install using `gem install bundle`) 
 
 
@@ -30,16 +28,23 @@ For running tests
      
 ### Item Format
 
-Item is returned in following format. Format customisation is planned as a new feauture.
+Item is returned in following format. Format customisation might come as next feature. 
 
       {
-        task: task,
+        task: Date: (project) - task,
         amount: 7.5,
         unit: hours
       }
      
-### Get items 
-     
+## Documentation
+    
+Better documentation will be added. To get items for last month run sth like that:
+
+    require 'toggl_client'
+    
+    TogglClient::Client.start(TOGGL_API__TOKEN)
+    TogglClient::Reports::Details.new.last_month_billable
+    
 ## Contribution
 Contribution is highly welcomed. Fork the repo, create a feature branch, create a pull request. 
 
@@ -47,6 +52,5 @@ Contribution is highly welcomed. Fork the repo, create a feature branch, create 
 
  - Toggle Pro features integration
  - More options to customize output and queries params
- - Implement other features / reports
  
  
