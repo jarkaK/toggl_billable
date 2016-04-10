@@ -1,4 +1,4 @@
-Toggl-billable
+Toggl-billable [![Build Status](https://travis-ci.org/jarkadlec/toggl_client.svg?branch=master)](https://travis-ci.org/jarkadlec/toggl_client)
 ==============
 
 Toggl client with main purpose to prepare data for invoicing. It is developed and tested only for the free version of 
