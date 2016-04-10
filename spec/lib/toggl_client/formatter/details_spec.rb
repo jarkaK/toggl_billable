@@ -115,10 +115,10 @@ describe TogglClient::Formatter::Details do
         amount: 2.0,
         unit: :hours
       },{
-      task: "Jan 16: #{projects[1]}: #{tasks[0]}",
-      amount: 1.0,
-      unit: :hours
-    }
+        task: "Jan 16: #{projects[1]}: #{tasks[0]}",
+        amount: 1.0,
+        unit: :hours
+      }
     ]
   end
 
@@ -147,6 +147,18 @@ describe TogglClient::Formatter::Details do
 
   it 'should return items in correct format' do
     expect(subject[clients[0]]).to eq(expected_items_client1)
+  end
+
+  context 'configure date formats differently' do
+    before do
+      TogglClient::Config.format_day = '%d-%m-%Y'
+      expected_items_client1.last[:task] = "16-01-2016: #{projects[1]}: #{tasks[0]}"
+    end
+
+    it 'should return items in correct format' do
+      expect(subject[clients[0]]).to eq(expected_items_client1)
+    end
+
   end
 
 end

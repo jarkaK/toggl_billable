@@ -6,6 +6,7 @@ require 'date'
 require_relative 'core_ext/fixnum.rb'
 
 require_relative 'toggl_client/client.rb'
+require_relative 'toggl_client/config.rb'
 require_relative 'toggl_client/user.rb'
 require_relative 'toggl_client/reports/base.rb'
 require_relative 'toggl_client/reports/summary.rb'
