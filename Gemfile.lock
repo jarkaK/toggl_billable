@@ -4,6 +4,7 @@ PATH
     toggl_billable (0.1.1)
       faraday (~> 0.8)
       json (~> 1.6)
+      rake
 
 GEM
   remote: https://rubygems.org/
@@ -23,6 +24,7 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+    rake (11.1.2)
     rspec (2.99.0)
       rspec-core (~> 2.99.0)
       rspec-expectations (~> 2.99.0)
