@@ -2,7 +2,7 @@ Toggl-billable
 ==============
 
 Toggl client with main purpose to prepare data for invoicing. It is developed and tested only for the free version of 
-Toggl (for now). The functionality is very limited and might be extended in future 
+Toggl (for now). The functionality is very limited and might be extended in future.
  
 ## Install
 
