@@ -2,7 +2,7 @@
 
 Gem::Specification.new do |gem|
   gem.name          = 'toggl_billable'
-  gem.version       = '0.1.2
+  gem.version       = '0.1.2'
   gem.date          = '2016-03-12'
   gem.summary       = "Basic operations with toggl API"
   gem.description   = "A simple gem that enables to communicate with toggl API. Main Purpose is to receive items for invoicing."
