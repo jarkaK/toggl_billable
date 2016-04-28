@@ -10,16 +10,16 @@ module TogglBillable
         params[:order_field] = options[:oder_field] || 'date'
         count = 0
 
-        result = {}
+        @report = {}
 
         loop do
           request = "details?user_agent=reports&#{hash_to_params}"
           response = JSON.parse(Client.report_get(request).body)
 
-          if result.size == 0
-            result = response
+          if @report.size == 0
+            @report = response
           else
-            result['data'] += response['data']
+            @report['data'] += response['data']
           end
 
           count += response['data'].count
@@ -28,7 +28,7 @@ module TogglBillable
           params[:page] += 1
         end
 
-        result
+        @report
       end
     end
   end
