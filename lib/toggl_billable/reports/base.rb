@@ -21,8 +21,6 @@ module TogglBillable
         billable_items
       end
 
-      private
-
       def billable_items
         params = {}
         params[:default_client] = options[:default_client] if options[:default_client]
@@ -30,6 +28,8 @@ module TogglBillable
         klass = Object.const_get("TogglBillable::Formatter::#{self.class.to_s.gsub(/^.*::/, '')}")
         klass.new(report, options).billable_items
       end
+
+      private
 
       def hash_to_params
         return '' unless params
